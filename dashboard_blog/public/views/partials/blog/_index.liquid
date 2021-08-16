@@ -5,6 +5,8 @@
 {% assign url_params = context.location.href | extract_url_params: url_template %}
 {% assign slug = url_params.slug[1] | default: 'blog' %}
 {% assign tags = url_params.tags | replace: '-', ' ' | default: null %}
+{% assign tags = params.slug3 | capitalize %}
+{% assign tags = tags | split: ',' %}
 {% assign pagination_page = context.params.page | default: 1 | plus: 0 %}
 {% assign per_page = context.params.per_page  | default: 10 | plus: 0 %}
 {% if pagination_page == 1 %}
